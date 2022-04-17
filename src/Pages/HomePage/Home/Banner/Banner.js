@@ -1,8 +1,13 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import banner from "../../../../images/banner.jpg";
 
 const Banner = () => {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate("/about");
+    }
     return (
         <div className='d-flex justify-content-around pt-5' style={{
             backgroundImage: `url(${banner})`, backgroundRepeat: "no-repeat", backgroundSize: "cover",
@@ -14,7 +19,7 @@ const Banner = () => {
                 <p>If you want to smile for a long run then you must have a private dentist consultant.
                     <br />You have your private dentist here. Choose an appoinment now.
                 </p>
-                <Button>See More</Button>
+                <Button onClick={handleClick}>See More</Button>
             </div>
             <div>
                 <input className='rounded-right me-2' type="text" placeholder='search here' />
