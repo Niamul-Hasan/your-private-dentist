@@ -4,12 +4,15 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from "../../../Firebase.init";
+import { useState } from 'react';
 
 const Register = () => {
 
     const nameRef = useRef('');
     const emailRef = useRef('');
     const passwordRef = useRef('');
+
+    const [agree, setAgree] = useState(false);
 
     const [
         createUserWithEmailAndPassword,
@@ -43,7 +46,7 @@ const Register = () => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control ref={emailRef} type="email" placeholder="Enter email" />
+                        <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
                         <Form.Text className="text-muted">
                             We'll never share your email with anyone else.
                         </Form.Text>
@@ -51,12 +54,12 @@ const Register = () => {
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control ref={passwordRef} type="password" placeholder="Password" />
+                        <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
+                        <Form.Check onClick={() => setAgree(!agree)} type="checkbox" label={<span className={`ps-2 ${agree ? 'text-success' : 'text-danger'}`} >Agree with Terms and Conditioins</span>} />
                     </Form.Group>
-                    <Button onClick={handleRegister} variant="primary" type="submit">
+                    <Button disabled={!agree} onClick={handleRegister} variant="primary" type="submit">
                         Register
                     </Button>
                     <p>Already have an account? <Button as={Link} to="/login" variant="link">LogIn</Button></p>
