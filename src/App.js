@@ -7,6 +7,8 @@ import Login from "./Pages/LoginPage/Login/Login";
 import Register from "./Pages/LoginPage/Register/Register";
 import RequireAuth from "./Pages/LoginPage/RequireAuth/RequireAuth";
 import Checkout from "./Pages/Checkout/Checkout";
+import NotFound from "./Pages/Not Found/NotFound";
+import FooterPage from "./Pages/Shared/Footer/FooterPage";
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
         <Route path="checkout" element={<RequireAuth>
           <Checkout />
         </RequireAuth>}></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
+      <FooterPage></FooterPage>
     </div>
   );
 }

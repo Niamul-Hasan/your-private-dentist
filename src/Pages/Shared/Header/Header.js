@@ -5,14 +5,19 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import logo from "../../../images/logo.png"
 import auth from '../../../Firebase.init';
+import Loading from '../Loading/Loading';
 
 const Header = () => {
 
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
 
     const handleLogOut = () => {
         signOut(auth);
     }
+    if (loading) {
+        return <Loading></Loading>
+    }
+
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="primary" sticky='top' variant="dark">

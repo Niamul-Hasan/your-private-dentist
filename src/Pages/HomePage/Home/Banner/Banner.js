@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import banner from "../../../../images/banner.jpg";
@@ -8,6 +8,16 @@ const Banner = () => {
     const handleClick = () => {
         navigate("/about");
     }
+
+    const inputRef = useRef('');
+    const handleSearch = () => {
+        const input = inputRef.current.value;
+        if (input === '') {
+            return;
+        }
+        navigate(`/${input}`);
+    }
+
     return (
         <div className='d-flex justify-content-around pt-5' style={{
             backgroundImage: `url(${banner})`, backgroundRepeat: "no-repeat", backgroundSize: "cover",
@@ -22,8 +32,8 @@ const Banner = () => {
                 <Button onClick={handleClick}>See More</Button>
             </div>
             <div>
-                <input className='rounded-right me-2' type="text" placeholder='search here' />
-                <input type="button" value="Search" />
+                <input ref={inputRef} className='rounded-right me-2' type="text" placeholder='search here' />
+                <input onClick={handleSearch} type="button" value="Search" />
 
             </div>
         </div>
