@@ -8,13 +8,14 @@ const Service = ({ serviceName }) => {
         <div>
             <Col>
                 <Card>
-                    <Card.Img variant="top" className='img-fluid w-50 mx-auto' src={img} />
+                    <Card.Img variant="top" className='img-fluid w-50 h-80 mx-auto' src={img} />
                     <Card.Body className='text-center'>
                         <Card.Title>{name}</Card.Title>
                         <Card.Text>
                             This is a longer card with supporting text below as a natural
                             lead-in to additional content. This content is a little bit longer.
                         </Card.Text>
+                        <Card.Text> <span className='fs-4 text-warning'>{price}</span> </Card.Text>
                         <Button as={Link} to="/checkout">Get Appoinment</Button>
                     </Card.Body>
                 </Card>
