@@ -1,9 +1,18 @@
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
 import logo from "../../../images/logo.png"
+import auth from '../../../Firebase.init';
 
 const Header = () => {
+
+    const [user, loading, error] = useAuthState(auth);
+
+    const handleLogOut = () => {
+        signOut(auth);
+    }
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="primary" sticky='top' variant="dark">
@@ -26,9 +35,7 @@ const Header = () => {
                         </Nav>
                         <Nav>
                             <Nav.Link as={Link} to="/about">About</Nav.Link>
-                            <Nav.Link as={Link} to="/login">
-                                LogIn
-                            </Nav.Link>
+                            {user ? <Nav.Link onClick={handleLogOut}>LogOut</Nav.Link> : <Nav.Link as={Link} to="/login">LogIn</Nav.Link>}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

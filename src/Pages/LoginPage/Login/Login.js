@@ -55,9 +55,7 @@ const Login = () => {
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Check me out" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
-                        LogIN
-                    </Button>
+                    <Button variant="primary" type="submit">LogIn</Button>
                     <p>New in Your Private Dentist? <Button onClick={handleClick} variant="link">Get Registation Now</Button></p>
                 </Form>
             </div>

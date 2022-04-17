@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Service = ({ serviceName }) => {
     const { name, img, price } = serviceName;
@@ -14,7 +15,7 @@ const Service = ({ serviceName }) => {
                             This is a longer card with supporting text below as a natural
                             lead-in to additional content. This content is a little bit longer.
                         </Card.Text>
-                        <Button>Get Appoinment</Button>
+                        <Button as={Link} to="/checkout">Get Appoinment</Button>
                     </Card.Body>
                 </Card>
             </Col>
