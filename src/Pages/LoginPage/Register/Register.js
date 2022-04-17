@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from "../../../Firebase.init";
 import { useState } from 'react';
+import Loading from '../../Shared/Loading/Loading';
 
 const Register = () => {
 
@@ -19,18 +20,22 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const handleRegister = async (event) => {
         event.preventDefault();
         const name = nameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
+        console.log(name, email, password);
 
         await createUserWithEmailAndPassword(email, password);
     }
 
     const navigate = useNavigate();
+    if (loading) {
+        return <Loading></Loading>;
+    }
     if (user) {
         navigate("/");
     }
