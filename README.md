@@ -1,7 +1,7 @@
 # Project name is  `Your Private Dentist`
 
 ## Firebase Deploy Link
-< https://your-private-dentist.web.app>
+<https://your-private-dentist.web.app>
 
 ### My project features are
 - This is a React Project
