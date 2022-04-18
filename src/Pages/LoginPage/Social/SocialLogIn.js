@@ -14,7 +14,7 @@ const SocialLogIn = () => {
     const navigate = useNavigate();
     let errorElement;
     if (error || gitError) {
-        errorElement = <p>Error: {error.message}</p>;
+        errorElement = <p style={{ color: 'red', fontSize: '24px' }}>Error: {error?.message}</p>;
     }
 
     let location = useLocation();

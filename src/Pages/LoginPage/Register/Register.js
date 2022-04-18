@@ -46,7 +46,7 @@ const Register = () => {
     }
 
     return (
-        <div className='container pt-5 w-50'>
+        <div className='container pt-5 w-100'>
             <div className='container w-50 shadow p-3 mb-5 bg-body rounded'>
                 <h1 style={{ color: 'teal' }}>Please Register</h1>
                 <Form>
