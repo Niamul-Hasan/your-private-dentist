@@ -1,9 +1,9 @@
-# Project name is  Your Private Dentist
+# Project name is  `Your Private Dentist`
 
 ## Firebase Deploy Link
-<abc>
+< https://your-private-dentist.web.app>
 
-### Some Features of my Project are
+### My project features are
 - This is a React Project
 - React Router is used
 - Private route is used
@@ -22,7 +22,8 @@
 ## Technologies used in my projct are
 - React
 - React Router
-- Firebase
+- Firebase authentication
+- Firebase Hosting
 - React Bootstrap
 - React Firebase hook
 
