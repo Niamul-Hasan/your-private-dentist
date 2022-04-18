@@ -32,9 +32,9 @@ const Header = () => {
                         </Nav>
 
                         <Nav>
-                            <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
-                            <Nav.Link as={Link} to="/checkout">Apoinment</Nav.Link>
-                            <Nav.Link as={Link} to="/about">About</Nav.Link>
+                            <Nav.Link as={Link} to="blog">Blog</Nav.Link>
+                            <Nav.Link as={Link} to="checkout">Apoinment</Nav.Link>
+                            <Nav.Link as={Link} to="about">About</Nav.Link>
                             {user ? <Nav.Link onClick={handleLogOut}><span
                                 style={{ color: 'orange', fontWeight: 'bold' }}>LogOut</span></Nav.Link> : <Nav.Link as={Link}
                                     to="/login">LogIn</Nav.Link>}
