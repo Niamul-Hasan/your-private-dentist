@@ -24,7 +24,7 @@ const SargeryParts = () => {
             id: 3,
             name: 'Free Follow up check-up',
             img: corner3,
-            description: "Your Private Dentist is very much patient freindly Dental service provider.Here you get a awesome sargery package where you will get free follow up check-up within 3 days of your sargery. Don't miss your gift."
+            description: "Your Private Dentist is a very much patient freindly Dental service provider.Here you get a awesome sargery package where you will get free follow up check-up within 3 days of your sargery. Don't miss your gift."
         },
     ]
     return (

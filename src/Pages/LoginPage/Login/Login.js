@@ -29,8 +29,6 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        console.log(email, password);
-
         await signInWithEmailAndPassword(email, password);
     }
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
@@ -61,7 +59,7 @@ const Login = () => {
     return (
         <div className='container pt-5 w-50'>
             <div className='container w-50 shadow p-3 mb-5 bg-body rounded'>
-                <h1>Please Log In</h1>
+                <h1 style={{ color: 'teal' }}>Please Log In</h1>
                 <Form onSubmit={handleLogIn}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
@@ -77,9 +75,11 @@ const Login = () => {
                     </Form.Group>
 
                     <Button variant="primary" type="submit">LogIn</Button>
+
                     <p className='text-danger fs-4'>{errorElement}</p>
-                    <p>Forget Password?<Button onClick={handleResetPassword} variant="link">Click to Reset Password</Button></p>
-                    <p>New in Your Private Dentist? <Button onClick={handleClick} variant="link">Get Registation Now</Button></p>
+                    <p>Forget Password?<Button onClick={handleResetPassword} variant="link" className="text-decoration-none text-primary">Click to Reset Password</Button></p>
+
+                    <p>New in Your Private Dentist? <Button onClick={handleClick} variant="link" className="text-decoration-none text-primary">Get Registation Now</Button></p>
                 </Form>
                 <ToastContainer></ToastContainer>
                 <SocialLogIn></SocialLogIn>

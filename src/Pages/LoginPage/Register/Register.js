@@ -37,6 +37,10 @@ const Register = () => {
     if (loading) {
         return <Loading></Loading>;
     }
+    let errorElement;
+    if (error) {
+        errorElement = error.message;
+    }
     if (user) {
         navigate("/");
     }
@@ -44,7 +48,7 @@ const Register = () => {
     return (
         <div className='container pt-5 w-50'>
             <div className='container w-50 shadow p-3 mb-5 bg-body rounded'>
-                <h1>Please Register</h1>
+                <h1 style={{ color: 'teal' }}>Please Register</h1>
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicText">
                         <Form.Label>Patient's Name</Form.Label>
@@ -63,12 +67,13 @@ const Register = () => {
                         <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check onClick={() => setAgree(!agree)} type="checkbox" label={<span className={`ps-2 ${agree ? 'text-success' : 'text-danger'}`} >Agree with Terms and Conditioins</span>} />
+                        <Form.Check onClick={() => setAgree(!agree)} type="checkbox" label={<span className={`ps-2 ${agree ? 'text-success' : 'text-danger'}`} >Agree with Terms and Conditions</span>} />
                     </Form.Group>
                     <Button disabled={!agree} onClick={handleRegister} variant="primary" type="submit">
                         Register
                     </Button>
-                    <p>Already have an account? <Button as={Link} to="/login" variant="link">LogIn</Button></p>
+                    <p className="text-danger fs-4">{errorElement}</p>
+                    <p>Already have an account? <Button as={Link} to="/login" variant="link" className="text-decoration-none text-primary">LogIn</Button></p>
                 </Form>
                 <SocialLogIn></SocialLogIn>
             </div>

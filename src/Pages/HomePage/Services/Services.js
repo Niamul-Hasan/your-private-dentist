@@ -15,8 +15,8 @@ const Services = () => {
         { id: 2, name: 'Cracked Care & Repair', price: '2500 tk/teeth', img: pic2 },
         { id: 3, name: 'Impaction Sargery', price: '3500 tk/teeth', img: pic3 },
         { id: 4, name: 'Relief from Toothache', price: '2000 tk/teeth', img: pic4 },
-        { id: 4, name: 'Periodonta Recovery', price: '2700 tk/teeth', img: pic5 },
-        { id: 4, name: 'Halitosis Solution', price: '4000 tk', img: pic6 },
+        { id: 5, name: 'Periodonta Recovery', price: '2700 tk/teeth', img: pic5 },
+        { id: 6, name: 'Halitosis Solution', price: '4000 tk', img: pic6 },
     ]
     return (
         <div className='container'>
