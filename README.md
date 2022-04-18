@@ -1,5 +1,31 @@
 # Project name is  Your Private Dentist
 
+## Firebase Deploy Link
+<abc>
+
+### Some Features of my Project are
+- This is a React Project
+- React Router is used
+- Private route is used
+- useNavigate is used
+- Firebase auth is used
+- Authentication by email and password
+- Email verification message send is implemented
+- password reset facilities is provided
+- Google and Github log in method is used
+- if loading react-bootstrsp spinner is noticed
+- if error, error.message will be shown in the form page
+- react-toast is used
+- project favicon is created
+- React-bootstrap navbar is used
+
+## Technologies used in my projct are
+- React
+- React Router
+- Firebase
+- React Bootstrap
+- React Firebase hook
+
 
 
 
