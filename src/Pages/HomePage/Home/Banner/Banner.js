@@ -29,7 +29,7 @@ const Banner = () => {
                 <p>If you want to smile for a long run then you must have a private dentist consultant.
                     <br />You have your private dentist here. Choose an appoinment now.
                 </p>
-                <Button onClick={handleClick}>See More</Button>
+                <Button onClick={handleClick}>See Me</Button>
             </div>
             <div>
                 <input ref={inputRef} className='rounded-right me-2' type="text" placeholder='search here' />

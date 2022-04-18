@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
-import logo from "../../../images/logo.png"
+import logo from "../../../images/Your Private Dentist-logos_black.png"
 import auth from '../../../Firebase.init';
 import Loading from '../Loading/Loading';
+import "./Header.css";
 
 const Header = () => {
 
@@ -23,7 +24,7 @@ const Header = () => {
             <Navbar collapseOnSelect expand="lg" bg="primary" sticky='top' variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
-                        <img src={logo} height={90} alt="" />
+                        <img src={logo} height={90} width={120} alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
@@ -32,12 +33,18 @@ const Header = () => {
                         </Nav>
 
                         <Nav>
-                            <Nav.Link as={Link} to="blog">Blog</Nav.Link>
-                            <Nav.Link as={Link} to="checkout">Apoinment</Nav.Link>
-                            <Nav.Link as={Link} to="about">About</Nav.Link>
+                            <NavLink as={Link} to="blog"
+                                className={({ isActive }) => (isActive ? "active-link" : "link")}
+                            >Blogs</NavLink>
+                            <NavLink as={Link} to="about"
+                                className={({ isActive }) => (isActive ? "active-link" : "link")}
+                            >About</NavLink>
+
+                            {/* login aor logOut part */}
+
                             {user ? <Nav.Link onClick={handleLogOut}><span
-                                style={{ color: 'orange', fontWeight: 'bold' }}>LogOut</span></Nav.Link> : <Nav.Link as={Link}
-                                    to="/login">LogIn</Nav.Link>}
+                                style={{ color: 'orange', fontWeight: 'bold', marginLeft: '15px', fontSize: '20px' }}>LogOut</span></Nav.Link> : <NavLink as={Link}
+                                    to="/login" className={'link'}>LogIn</NavLink>}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

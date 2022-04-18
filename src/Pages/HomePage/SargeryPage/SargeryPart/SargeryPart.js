@@ -11,7 +11,7 @@ const SargeryPart = ({ sergaryCorner }) => {
                 <Card>
                     <Card.Img variant="top" className='img-fluid w-75 mx-auto' src={img} />
                     <Card.Body className='text-center'>
-                        <Card.Title>{name}</Card.Title>
+                        <Card.Title style={{ color: 'tomato', fontSize: '28px' }}>{name}</Card.Title>
                         <Card.Text>
                             {description}
                         </Card.Text>
