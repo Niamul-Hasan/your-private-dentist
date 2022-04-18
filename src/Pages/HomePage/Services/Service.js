@@ -1,9 +1,13 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Service = ({ serviceName }) => {
-    const { name, img, price } = serviceName;
+    const { name, img, price, id } = serviceName;
+    const navigate = useNavigate();
+    const handleApoinment = () => {
+        navigate(`/checkout/${id}`);
+    }
     return (
         <div>
             <Col>
@@ -16,7 +20,7 @@ const Service = ({ serviceName }) => {
                             lead-in to additional content. This content is a little bit longer.
                         </Card.Text>
                         <Card.Text> <span className='fs-4 text-warning'>{price}</span> </Card.Text>
-                        <Button as={Link} to="/checkout">Get Appoinment</Button>
+                        <Button onClick={handleApoinment}>Get Appoinment</Button>
                     </Card.Body>
                 </Card>
             </Col>

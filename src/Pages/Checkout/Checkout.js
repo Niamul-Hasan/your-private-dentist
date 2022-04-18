@@ -1,17 +1,22 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Checkout = () => {
 
-    const handleApoinment = async (event) => {
-        event.preventDefault();
+    const { checkoutId } = useParams();
 
+    const handleApoinment = (event) => {
+        event.preventDefault();
+        toast('Thanks for your Confirmation');
     }
     return (
         <div className='container pt-5 w-50'>
             <h3 style={{ color: 'coral', textAlign: 'center' }}>Please Fill-up the Form and Confirm your service. { }</h3>
             <div className='container w-50 shadow p-3 mb-5 bg-body rounded'>
-                <h3 style={{ color: 'teal' }}>Required Service ID: { }</h3>
+                <h3 style={{ color: 'teal' }}>Required Service ID: {checkoutId}</h3>
                 <Form onSubmit={handleApoinment}>
                     <Form.Group className="mb-3" controlId="formBasicText">
                         <Form.Label>Patient's Name</Form.Label>
@@ -39,6 +44,7 @@ const Checkout = () => {
                         Confirm
                     </Button>
                 </Form>
+                <ToastContainer />
             </div>
         </div>
     );
